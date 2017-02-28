@@ -1,4 +1,4 @@
-package java8intro.java7.functional;
+package java8intro.java8.functional;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
