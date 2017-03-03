@@ -10,12 +10,9 @@ import java.util.concurrent.TimeoutException;
 
 public class RunnableAndCallableExample {
 	private void runThread() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				System.out.println(Thread.currentThread().getName());
-				System.out.println(this);
-			}
+		Runnable runnable = () -> {
+			System.out.println(Thread.currentThread().getName());
+			System.out.println(this);
 		};
 		System.out.println(Thread.currentThread().getName());
 		Thread thread = new Thread(runnable);

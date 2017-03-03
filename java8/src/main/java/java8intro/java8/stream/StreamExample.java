@@ -11,7 +11,8 @@ public class StreamExample {
 		integers.stream()
 				.filter(i -> i % 2 == 0)
 				.sorted()
-				.forEach(System.out::println);
+				.map(i -> i * 2)
+				.forEach(i -> System.out.println(i));
 	}
 
 	private void multiplyByTwo() {
@@ -23,7 +24,9 @@ public class StreamExample {
 	private void parallelStream() {
 		List<Integer> sortedIntegers = integers.stream().sorted().collect(Collectors.toList());
 		System.out.println(sortedIntegers);
-		sortedIntegers.parallelStream().forEach(System.out::println);
+		sortedIntegers.parallelStream().forEach(i -> {
+			System.out.println(Thread.currentThread().getName() + " " + i);
+		});
 	}
 
 	public static void main(String[] args) {
